@@ -131,7 +131,7 @@ html:not(.running) #stop-button {
   display: none;
 }
 
-@media (max-width: 900px){
+@media (max-width: 800px){
   #app {
     flex-direction: column;
     gap: 30px;
