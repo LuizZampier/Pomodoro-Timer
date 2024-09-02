@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --bg-screen: #FFF;
+  --text-color: #323238;
+  --bg-card: #E1E1E6;
+  --bg-card-pressed: #02799D;
+  --toggle-color: #323238; 
+}
+
+body {
+  background-color: var(--bg-screen);
+  font-family: 'Roboto', sans-serif;
+}
+
+html.dark,
+#effects .pressed html.dark {
+  --text-color: #FFF;
+  --bg-screen: #323238;
+  --bg-card: #e1e1e66b;
+  --bg-card-pressed: #066986;
+  --toggle-color: #FFF; 
+}
+
+html.dark .ph-sun,
+html:not(.dark) .ph-moon {
+  display: none;
+}
+
+#app {
+  display: flex;
+  place-items: center;
+  justify-content: space-evenly;
+  
+
+  height: 100vh;
+}
+
+#toggle-mode{
+  position: absolute;
+  right: 3.2rem;
+  top: 3.2rem;
+  font-size: 4rem;
+  line-height: 0;
+  background: transparent;
+  border: none;
+
+  color: var(--toggle-color);
+  cursor: pointer;
+}
+
+#toggle-mode:hover {
+  transform: scale(1.1);
+  transition: transform 200ms;
+}
+
+span, button {
+  color: var(--text-color);
+}
+
+button {
+  cursor: pointer;
+}
+
+#timer button,
+#controlers button {
+  background: transparent;
+  border: none;
+}
+
+#time span {
+  font-size: 14rem;
+  font-weight: 550;
+}
+
+#controlers {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+
+#controlers button{
+  font-size: 7rem;
+}
+
+#controlers button:hover {
+  transform: scale(1.1);
+
+  transition: transform 200ms ease-out;
+}
+
+#effects button {
+  border: none;
+  border-radius: 2.4rem;
+
+  width: 13.8rem;
+  height: 15.2rem;
+
+  font-size: 5.6rem;
+
+  background: var(--bg-card);
+}
+
+#effects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3.2rem;
+}
+
+#effects button:hover {
+  background: var(--bg-card-pressed);
+  color: var(--bg-screen);
+
+  transition: all 200ms linear;
+}
+
+#effects .pressed{
+  background: var(--bg-card-pressed);
+  color: var(--bg-screen);
+}
+
+.running  #play-button, 
+html:not(.running) #stop-button {
+  display: none;
+}
+
+@media (max-width: 900px){
+  #app {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  #toggle-mode {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    right: 0;
+  }
+
+  #effects {
+    padding-bottom: 3.0rem;
+  }
+}

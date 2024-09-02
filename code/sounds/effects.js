@@ -1,0 +1,1 @@
+export const effectControls = document.getElementById('effects')
